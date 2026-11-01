@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeel Patel</title>
+<meta name="description" content="Jeel Patel — Computing & Informatics student at Rowan University building secure systems, automation, and data tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --ink: #16202b;
+    --muted: #55606c;
+    --line: #e2e0d8;
+    --accent: #0b5d6b;
+    --accent-soft: #e3f0f1;
+    --code-bg: #eef0ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10161c;
+      --surface: #161e26;
+      --ink: #e8ecef;
+      --muted: #9aa6b1;
+      --line: #26313c;
+      --accent: #5cc4cf;
+      --accent-soft: #15303a;
+      --code-bg: #1c2731;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  code, .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.88em; }
+  code { background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav .brand { font-family: "IBM Plex Mono", monospace; font-weight: 500; color: var(--ink); text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav ul a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav ul a:hover { color: var(--ink); }
+
+  header.hero { padding: 88px 0 56px; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; color: var(--accent); font-size: 14px; margin: 0 0 14px; }
+  h1 { font-size: clamp(38px, 6vw, 56px); line-height: 1.08; margin: 0 0 20px; letter-spacing: -0.02em; }
+  .lede { font-size: 20px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn:hover { border-color: var(--accent); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 15px; font-family: "IBM Plex Mono", monospace; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 28px; }
+  section p { max-width: 680px; }
+
+  .project {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 30px 30px 24px; margin-bottom: 26px;
+  }
+  .project h3 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .stack { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+  .project h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 22px 0 6px; }
+  .project p, .project ul { margin: 0 0 10px; }
+  .project ul { padding-left: 20px; }
+  .project li { margin-bottom: 6px; }
+  .project .more { margin-top: 16px; font-weight: 500; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+  .skill h3 { font-size: 16px; margin: 0 0 6px; }
+  .skill p { font-size: 15px; color: var(--muted); margin: 0; }
+
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 8px; padding: 22px 26px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0 60px; color: var(--muted); font-size: 15px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav ul { gap: 14px; }
+    nav ul li.hide-sm { display: none; }
+    header.hero { padding: 56px 0 40px; }
+    .lede { font-size: 18px; }
+    .project { padding: 22px 20px 18px; }
+    .project h3 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">jeel.patel</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li class="hide-sm"><a href="#beyond">Beyond class</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Computing &amp; Informatics · Rowan University</p>
+    <h1>Jeel Patel</h1>
+    <!-- REWRITE THIS INTRO IN YOUR OWN WORDS before publishing. Keep it 2–4 sentences: who you are, what you care about, what you want next. -->
+    <p class="lede">I build systems and then try to break them. I'm a Computing &amp; Informatics student with minors in Computer Science and Cybersecurity, and I'm looking for a Summer 2027 internship in IT operations, cloud, or security.</p>
+    <div class="links">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn" href="https://github.com/JP05165" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+
+    <article class="project">
+      <h3>Bank Security Transactional System</h3>
+      <p class="stack">Python · Flask · bcrypt · JWT · flask-limiter · Bash · cron · Splunk</p>
+      <p>A small banking backend with a web front end ("VaultBank"), built to practice securing an application end to end and then proving the security works with automated tests and monitoring.</p>
+
+      <h4>What was hard</h4>
+      <!-- Add a sentence or two here in your own words about the bug that took you the longest. -->
+      <ul>
+        <li><strong>Password hashing.</strong> bcrypt works on bytes, not strings, and mixing the two caused login failures until I fixed the encoding on both the hashing and checking sides.</li>
+        <li><strong>Token handling.</strong> Getting JWTs issued, sent, and validated correctly on every protected route, and rejecting bad or missing tokens.</li>
+        <li><strong>A design flaw I fixed mid-project.</strong> Registering a user and creating a bank account were separate steps, which let the two drift apart. I refactored so registration creates the account and the username is the account ID.</li>
+      </ul>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Added rate limiting on login with <code>flask-limiter</code>, keyed by client IP, so repeated attempts get an HTTP 429 after 5 tries.</li>
+        <li>Wrote <code>security_test.py</code>, an audit script that tests unauthenticated access, rate limiting, and invalid-token rejection, and writes timestamped results to a log.</li>
+        <li>Wrote <code>run_audit.sh</code> to start Flask in the background, confirm it is up with <code>curl</code>, run the audit, and shut the server down, plus <code>rotate_logs.sh</code> for log rotation. Both run nightly on cron.</li>
+        <li>Fed the audit log into Splunk Enterprise and built a four-panel SIEM dashboard in SPL: warnings over time, rate-limit hits by status code, audit run timeline, and pass/fail counts.</li>
+      </ul>
+      <p class="more"><a href="https://github.com/JP05165/bank-security-transactional-system" target="_blank" rel="noopener">View the code on GitHub →</a></p>
+    </article>
+
+    <article class="project">
+      <h3>NFL Analytics Dashboard</h3>
+      <p class="stack">Python · Flask · pandas · nfl_data_py · Chart.js</p>
+      <p>A web dashboard that pulls real NFL game data and shows a team's season at a glance: points per game, win/loss record, home vs. away performance, and averages.</p>
+
+      <h4>What was hard</h4>
+      <!-- Add your own sentence: what confused you about the data at first? -->
+      <p>The game data doesn't have a column for "my team's score." Each row has a home score and an away score, so which number belongs to the team depends on where they played. I used a row-wise <code>apply</code> in pandas to pick the right score for every game before calculating anything.</p>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Built a Flask backend with JSON endpoints for scores and home/away splits, and a front end that renders bar and doughnut charts with Chart.js.</li>
+        <li>Started with only the 2024 Eagles, then generalized it: a 32-team picker and dynamic routes like <code>/api/scores/&lt;team&gt;</code>, with one <code>get_team_data(team)</code> function replacing the hardcoded version.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>AWS Cloud Engineering Projects</h3>
+      <p class="stack">AWS · S3 · IAM · VPC · KMS · DynamoDB</p>
+      <p>A self-directed run through the NextWork Cloud Engineer roadmap, building the infrastructure by hand in AWS.</p>
+
+      <h4>What was hard</h4>
+      <!-- WRITE THIS YOURSELF: which VPC concept or bug was hardest? (route tables, subnets, security groups vs NACLs, connectivity testing...) Be specific. -->
+      <p>The VPC series meant reasoning about how traffic actually moves: public versus private subnets, route tables, gateways, and which security layer blocks what.</p>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Hosted a static website on S3 and configured IAM users and permissions.</li>
+        <li>Completed the full nine-project Amazon VPC series.</li>
+        <li>Skipped the Aurora/RDS section because of free-tier limits and moved on to the security track, starting with KMS encryption and DynamoDB.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="wrap">
+    <h2>Beyond class</h2>
+    <div class="callout">
+      <!-- Make this paragraph yours: why do you care about football data? -->
+      <p>The NFL dashboard started because I follow the Eagles and wanted to see their season in numbers instead of headlines. Once the single-team version worked, I kept going and rebuilt it to handle all 32 teams. Nobody assigned it.</p>
+      <p>On the security side, I completed CompTIA's CySA+ CertMaster Learn and Labs and I'm preparing for the CompTIA A+ exam.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills &amp; background</h2>
+    <div class="grid">
+      <div class="skill">
+        <h3>Security</h3>
+        <p>Auth with bcrypt and JWT, rate limiting, security audit scripting, Splunk SPL dashboards, CySA+ labs</p>
+      </div>
+      <div class="skill">
+        <h3>Automation &amp; Linux</h3>
+        <p>Bash scripting, cron scheduling, log rotation, Git over SSH</p>
+      </div>
+      <div class="skill">
+        <h3>Cloud</h3>
+        <p>AWS S3, IAM, VPC networking, KMS, DynamoDB</p>
+      </div>
+      <div class="skill">
+        <h3>Programming</h3>
+        <p>Python (Flask, pandas, requests), Java (data structures: AVL trees, Prim's and Kruskal's MST), HTML/CSS/JavaScript, ARM64 assembly</p>
+      </div>
+      <div class="skill">
+        <h3>Networking</h3>
+        <p>TCP/UDP, NAT, ARP, routing protocols, packet analysis in Wireshark</p>
+      </div>
+      <div class="skill">
+        <h3>Education</h3>
+        <p>B.S. Computing &amp; Informatics, Rowan University. Minors in Computer Science and Cybersecurity. 4.0 GPA.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px"><a href="resume.pdf" target="_blank" rel="noopener">Download my full resume (PDF) →</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>I'm looking for Summer 2027 internships in IT operations, cloud, and security. The best way to reach me is email.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:jeel20579@gmail.com">jeel20579@gmail.com</a>
+      <a class="btn" href="https://github.com/JP05165" target="_blank" rel="noopener">github.com/JP05165</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Jeel Patel · Built by hand and hosted on GitHub Pages</div>
+</footer>
+
+</body>
+</html>
