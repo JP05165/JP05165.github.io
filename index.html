@@ -143,7 +143,7 @@
     <div class="links">
       <a class="btn primary" href="#work">See my work</a>
       <a class="btn" href="https://github.com/JP05165" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="Jeel_Patel_resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </div>
 </header>
@@ -151,14 +151,37 @@
 <section id="work">
   <div class="wrap">
     <h2>Selected work</h2>
+      <p style="margin:-12px 0 28px">None of these were assigned. I built all three on my own time to learn how real systems work and how they break.</p>
 
+        <article class="project">
+      <h3>Security Toolkit</h3>
+      <p class="stack">Python · cryptography (Fernet) · PBKDF2 · secrets · Streamlit</p>
+      <p>A set of connected security tools built on shared code: a password strength checker, a password generator, a login system, and file and text encryption.</p>
+
+      <h4>What was hard</h4>
+      <!-- Add your own sentence: which part took you longest to get right? -->
+      <ul>
+        <li><strong>Hashing vs. encryption.</strong> Passwords need a one-way hash you can only verify, while files need encryption you can reverse with the right key. I used PBKDF2 for the login system and Fernet for encryption, and had to keep the two ideas straight.</li>
+        <li><strong>Storing the salt with the data.</strong> Every encryption uses a fresh random salt, so decrypting means splitting the salt back off the front of the encrypted blob and re-deriving the same key from the password.</li>
+        <li><strong>Generating passwords that are actually random.</strong> The generator guarantees at least one character from each selected type, then shuffles everything with a cryptographically secure shuffle so those required characters don't always sit at the start.</li>
+      </ul>
+
+      <h4>What I did</h4>
+      <ul>
+        <li>Strength checker that estimates entropy, scores length and character variety, flags repeats and sequences, and rejects anything on a 10,000-entry common-password list.</li>
+        <li>Login system that salts and hashes passwords with PBKDF2 (100,000 iterations) and returns the same generic error for a wrong username or a wrong password, so it doesn't reveal which accounts exist.</li>
+        <li>Encryption engine that derives a key from a password with PBKDF2 (480,000 iterations) and encrypts with Fernet, with wrong-password attempts caught and rejected cleanly.</li>
+        <li>Tested every module with round-trip checks: encrypt then decrypt, register then log in, and confirm wrong passwords fail.</li>
+      </ul>
+    </article>
+      
     <article class="project">
       <h3>Bank Security Transactional System</h3>
       <p class="stack">Python · Flask · bcrypt · JWT · flask-limiter · Bash · cron · Splunk</p>
       <p>A small banking backend with a web front end ("VaultBank"), built to practice securing an application end to end and then proving the security works with automated tests and monitoring.</p>
 
       <h4>What was hard</h4>
-      <!-- Add a sentence or two here in your own words about the bug that took you the longest. -->
+      Embedding the logical functions of the python code into the frontend with JavaScript and HTML. 
       <ul>
         <li><strong>Password hashing.</strong> bcrypt works on bytes, not strings, and mixing the two caused login failures until I fixed the encoding on both the hashing and checking sides.</li>
         <li><strong>Token handling.</strong> Getting JWTs issued, sent, and validated correctly on every protected route, and rejecting bad or missing tokens.</li>
@@ -188,6 +211,7 @@
       <ul>
         <li>Built a Flask backend with JSON endpoints for scores and home/away splits, and a front end that renders bar and doughnut charts with Chart.js.</li>
         <li>Started with only the 2024 Eagles, then generalized it: a 32-team picker and dynamic routes like <code>/api/scores/&lt;team&gt;</code>, with one <code>get_team_data(team)</code> function replacing the hardcoded version.</li>
+        <li>Each team got its own logo and when the logo was pressed by the user, all the programmed stats of the team from the 2024 was displayed.</li>
       </ul>
     </article>
 
@@ -212,11 +236,12 @@
 
 <section id="beyond">
   <div class="wrap">
-    <h2>Beyond class</h2>
+    <h2>Why I build</h2>
     <div class="callout">
-      <!-- Make this paragraph yours: why do you care about football data? -->
-      <p>The NFL dashboard started because I follow the Eagles and wanted to see their season in numbers instead of headlines. Once the single-team version worked, I kept going and rebuilt it to handle all 32 teams. Nobody assigned it.</p>
-      <p>On the security side, I completed CompTIA's CySA+ CertMaster Learn and Labs and I'm preparing for the CompTIA A+ exam.</p>
+      <p>Courses can only teach student so much, without going out and exploring on your own, a student wouldn't truly know what they are capable or creating.<p>
+      <p>The NFL dashboard started because I follow the Eagles and wanted to see their season in numbers instead of headlines. Once the single-team version worked, I kept going and rebuilt it to handle all 32 teams.</p>
+      <p>The transactional system I created gave me insight of how transactions work in the realworld and how much thought is put into creating the logical functions behind the frontend framework.</p>
+      <P>I worked on the security tookit application because I wanted to create some common features that many people depend on such as password generators so that I can custom make one to my requirements.</P>
     </div>
   </div>
 </section>
@@ -227,7 +252,7 @@
     <div class="grid">
       <div class="skill">
         <h3>Security</h3>
-        <p>Auth with bcrypt and JWT, rate limiting, security audit scripting, Splunk SPL dashboards, CySA+ labs</p>
+        <p>Auth with bcrypt and JWT, rate limiting, security audit scripting, Splunk SPL dashboards. Completed CompTIA CySA+ CertMaster Learn and Labs in coursework; preparing for CompTIA A+.</p>
       </div>
       <div class="skill">
         <h3>Automation &amp; Linux</h3>
