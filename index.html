@@ -181,8 +181,8 @@
       <p>A small banking backend with a web front end ("VaultBank"), built to practice securing an application end to end and then proving the security works with automated tests and monitoring.</p>
 
       <h4>What was hard</h4>
-      Embedding the logical functions of the python code into the frontend with JavaScript and HTML. 
       <ul>
+        <li><strong>Embedding the logical functions of the python code into the frontend with JavaScript and HTML.</strong></li>
         <li><strong>Password hashing.</strong> bcrypt works on bytes, not strings, and mixing the two caused login failures until I fixed the encoding on both the hashing and checking sides.</li>
         <li><strong>Token handling.</strong> Getting JWTs issued, sent, and validated correctly on every protected route, and rejecting bad or missing tokens.</li>
         <li><strong>A design flaw I fixed mid-project.</strong> Registering a user and creating a bank account were separate steps, which let the two drift apart. I refactored so registration creates the account and the username is the account ID.</li>
