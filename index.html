@@ -139,7 +139,7 @@
     <p class="eyebrow">Computing &amp; Informatics · Rowan University</p>
     <img class="headshot" src="me-2.jpg" alt="Photo of Jeel Patel">
     <h1>Jeel Patel</h1>
-    <p class="lede">Hello! I'm a Computing &amp; Informatics student with minors in Computer Science and Cybersecurity at Rowan University. I like building systems and then testing whether my own security actually holds up, like thw audit scrips I wrote against my bank app. I am looking for a Summer 2027 internship opportunity in IT operations, cloud, security, or tech consulting.</p>
+    <p class="lede">Hello! I'm a Computing &amp; Informatics student with minors in Computer Science and Cybersecurity at Rowan University. I like building systems and then testing whether my own security actually holds up, like thw audit scripts I wrote against my bank app. I am looking for a Summer 2027 internship opportunity in IT operations, cloud, security, or tech consulting.</p>
     <div class="links">
       <a class="btn primary" href="#work">See my work</a>
       <a class="btn" href="https://github.com/JP05165" target="_blank" rel="noopener">GitHub</a>
@@ -159,7 +159,7 @@
       <p>A set of connected security tools built on shared code: a password strength checker, a password generator, a login system, and file and text encryption.</p>
 
       <h4>What was hard</h4>
-      The hardest part for me when creating the security toolkit was understand the various types of cryptogrophy techniques and why Python needs to use b64encode when encrypting passwords. 
+      <p>The hardest part for me when creating the security toolkit was understanding the various types of cryptogrophy techniques and which situation each one is used in. I had to also wrap my head around my Fernet needed b64encode for creating symmetric secret keys for encryption and decryption.</p>
       <ul>
         <li><strong>Hashing vs. encryption.</strong> Passwords need a one-way hash you can only verify, while files need encryption you can reverse with the right key. I used PBKDF2 for the login system and Fernet for encryption, and had to keep the two ideas straight.</li>
         <li><strong>Storing the salt with the data.</strong> Every encryption uses a fresh random salt, so decrypting means splitting the salt back off the front of the encrypted blob and re-deriving the same key from the password.</li>
@@ -182,7 +182,7 @@
 
       <h4>What was hard</h4>
       <ul>
-        <li><strong>Embedding the logical functions of the python code into the frontend with JavaScript and HTML.</strong></li>
+        <li><strong>Conversion from Python to Frontend.</strong>Embedding the logical functions of the python code into the frontend with JavaScript and HTML.</li>
         <li><strong>Password hashing.</strong> bcrypt works on bytes, not strings, and mixing the two caused login failures until I fixed the encoding on both the hashing and checking sides.</li>
         <li><strong>Token handling.</strong> Getting JWTs issued, sent, and validated correctly on every protected route, and rejecting bad or missing tokens.</li>
         <li><strong>A design flaw I fixed mid-project.</strong> Registering a user and creating a bank account were separate steps, which let the two drift apart. I refactored so registration creates the account and the username is the account ID.</li>
@@ -221,7 +221,7 @@
       <p>A self-directed run through the NextWork Cloud Engineer roadmap, building the infrastructure by hand in AWS.</p>
 
       <h4>What was hard</h4>
-      <p> Learning how to query with a non-relational database was a bit of a challenge because fields are not related to each other and quering for multiple items is a diffcult task when there is no correlation between the two.</p>
+      <p> Learning how to query with a non-relational database was a bit of a challenge because fields are not related to each other and querying for multiple items is a difficult task when there is no correlation between the two.</p>
       <p>The VPC series meant reasoning about how traffic actually moves: public versus private subnets, route tables, gateways, and which security layer blocks what.</p>
 
       <h4>What I did</h4>
@@ -241,7 +241,7 @@
       <p>Courses can only teach a student so much. Without going out and exploring on your own, a student wouldn't truly know what they are capable of creating.</p>
       <p>The NFL dashboard started because I follow the Eagles and wanted to see their season in numbers instead of headlines. Once the single-team version worked, I kept going and rebuilt it to handle all 32 teams.</p>
       <p>The transactional system I created gave me insight into how transactions work in the real world and how much thought is put into creating the logical functions behind the frontend framework.</p>
-      <p>I worked on the Security Toolkit application because I wanted to create some common features that many people depend on such as password generators so that I can custom make one to my requirements.</P>
+      <p>I worked on the Security Toolkit application because I wanted to create some common features that many people depend on such as password generators so that I can custom make one to my requirements.</p>
     </div>
   </div>
 </section>
