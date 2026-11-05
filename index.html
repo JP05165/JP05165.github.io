@@ -159,7 +159,7 @@
       <p>A set of connected security tools built on shared code: a password strength checker, a password generator, a login system, and file and text encryption.</p>
 
       <h4>What was hard</h4>
-      <!-- Add your own sentence: which part took you longest to get right? -->
+      The hardest part for me when creating the security toolkit was understand the various types of cryptogrophy techniques and why Python needs to use b64encode when encrypting passwords. 
       <ul>
         <li><strong>Hashing vs. encryption.</strong> Passwords need a one-way hash you can only verify, while files need encryption you can reverse with the right key. I used PBKDF2 for the login system and Fernet for encryption, and had to keep the two ideas straight.</li>
         <li><strong>Storing the salt with the data.</strong> Every encryption uses a fresh random salt, so decrypting means splitting the salt back off the front of the encrypted blob and re-deriving the same key from the password.</li>
@@ -204,7 +204,7 @@
       <p>A web dashboard that pulls real NFL game data and shows a team's season at a glance: points per game, win/loss record, home vs. away performance, and averages.</p>
 
       <h4>What was hard</h4>
-      <!-- Add your own sentence: what confused you about the data at first? -->
+      <p>The hardest part when designing the Analytics Dashboard was figuring out what information from the dataset was useful and how I was going to set it up in Pandas so that it stays generic so I can create a dashboard for every team.</p>
       <p>The game data doesn't have a column for "my team's score." Each row has a home score and an away score, so which number belongs to the team depends on where they played. I used a row-wise <code>apply</code> in pandas to pick the right score for every game before calculating anything.</p>
 
       <h4>What I did</h4>
@@ -221,7 +221,7 @@
       <p>A self-directed run through the NextWork Cloud Engineer roadmap, building the infrastructure by hand in AWS.</p>
 
       <h4>What was hard</h4>
-      <!-- WRITE THIS YOURSELF: which VPC concept or bug was hardest? (route tables, subnets, security groups vs NACLs, connectivity testing...) Be specific. -->
+      <p> Learning how to query with a non-relational database was a bit of a challenge because fields are not related to each other and quering for multiple items is a diffcult task when there is no correlation between the two.</p>
       <p>The VPC series meant reasoning about how traffic actually moves: public versus private subnets, route tables, gateways, and which security layer blocks what.</p>
 
       <h4>What I did</h4>
