@@ -139,7 +139,7 @@
     <p class="eyebrow">Computing &amp; Informatics · Rowan University</p>
     <img class="headshot" src="me-2.jpg" alt="Photo of Jeel Patel">
     <h1>Jeel Patel</h1>
-    <p class="lede">Hello! I'm a Computing &amp; Informatics student with minors in Computer Science and Cybersecurity at Rowan University. I like building systems and then testing whether my own security actually holds up, like thw audit scripts I wrote against my bank app. I am looking for a Summer 2027 internship opportunity in IT operations, cloud, security, or tech consulting.</p>
+    <p class="lede">Hello! I'm a Computing &amp; Informatics student with minors in Computer Science and Cybersecurity at Rowan University. I like building systems and then testing whether my own security actually holds up, like the audit scripts I wrote against my bank app. I am looking for a Summer 2027 internship opportunity in IT operations, cloud, security, or tech consulting.</p>
     <div class="links">
       <a class="btn primary" href="#work">See my work</a>
       <a class="btn" href="https://github.com/JP05165" target="_blank" rel="noopener">GitHub</a>
@@ -159,7 +159,7 @@
       <p>A set of connected security tools built on shared code: a password strength checker, a password generator, a login system, and file and text encryption.</p>
 
       <h4>What was hard</h4>
-      <p>The hardest part for me when creating the security toolkit was understanding the various types of cryptogrophy techniques and which situation each one is used in. I had to also wrap my head around my Fernet needed b64encode for creating symmetric secret keys for encryption and decryption.</p>
+      <p>The hardest part for me when creating the security toolkit was understanding the various types of cryptography techniques and which situation each one is used in. I had to also wrap my head around why Fernet needed b64encode for creating symmetric secret keys for encryption and decryption.</p>
       <ul>
         <li><strong>Hashing vs. encryption.</strong> Passwords need a one-way hash you can only verify, while files need encryption you can reverse with the right key. I used PBKDF2 for the login system and Fernet for encryption, and had to keep the two ideas straight.</li>
         <li><strong>Storing the salt with the data.</strong> Every encryption uses a fresh random salt, so decrypting means splitting the salt back off the front of the encrypted blob and re-deriving the same key from the password.</li>
@@ -182,7 +182,7 @@
 
       <h4>What was hard</h4>
       <ul>
-        <li><strong>Conversion from Python to Frontend.</strong>Embedding the logical functions of the python code into the frontend with JavaScript and HTML.</li>
+        <li><strong>Conversion from Python to Frontend.</strong> Embedding the logical functions of the python code into the frontend with JavaScript and HTML.</li>
         <li><strong>Password hashing.</strong> bcrypt works on bytes, not strings, and mixing the two caused login failures until I fixed the encoding on both the hashing and checking sides.</li>
         <li><strong>Token handling.</strong> Getting JWTs issued, sent, and validated correctly on every protected route, and rejecting bad or missing tokens.</li>
         <li><strong>A design flaw I fixed mid-project.</strong> Registering a user and creating a bank account were separate steps, which let the two drift apart. I refactored so registration creates the account and the username is the account ID.</li>
