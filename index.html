@@ -155,8 +155,8 @@ F<!DOCTYPE html>
 
         <article class="project">
       <h3>Security Toolkit</h3>
-      <p class="stack">Python · cryptography (Fernet) · PBKDF2 · secrets · Streamlit</p>
-      <p>A set of connected security tools built on shared code: a password strength checker, a password generator, a login system, and file and text encryption.</p>
+      <p class="stack">Python · cryptography (Fernet) · PBKDF2 · hashlib · secrets</p>
+      <p>A set of connected security modules: a password strength checker and generator, a login system, and a password-based encryption engine.</p>
 
       <h4>What was hard</h4>
       <p>The hardest part for me when creating the security toolkit was understanding the various types of cryptography techniques and which situation each one is used in. I had to also wrap my head around why Fernet needed b64encode for creating symmetric secret keys for encryption and decryption.</p>
@@ -173,6 +173,7 @@ F<!DOCTYPE html>
         <li>Encryption engine that derives a key from a password with PBKDF2 (480,000 iterations) and encrypts with Fernet, with wrong-password attempts caught and rejected cleanly.</li>
         <li>Tested every module with round-trip checks: encrypt then decrypt, register then log in, and confirm wrong passwords fail.</li>
       </ul>
+      <p class="more"><a href="https://github.com/JP05165/security-toolkit" target="_blank" rel="noopener">View the code on GitHub →</a></p>
     </article>
       
     <article class="project">
